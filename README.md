@@ -50,7 +50,7 @@ Just for fun!
 - [ ] 3. Rotate a Linked List
 - [ ] 4. Reverse a Linked List in groups of given size
 - [ ] 5. Intersection point in Y shaped linked lists
-- [ ] 6. Detect Loop in linked list
+- [x] 6. Detect Loop in linked list
 - [ ] 7. Remove loop in Linked List
 - [ ] 8. n’th node from end of linked list
 - [ ] 9. Flattening a Linked List
