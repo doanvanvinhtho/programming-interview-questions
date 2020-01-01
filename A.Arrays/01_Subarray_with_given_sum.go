@@ -33,3 +33,17 @@ func subarrayWithGivenSum(a []int, sum int) (int, int) {
 
 	return -1, -1
 }
+
+func subarrayWithGivenSumNotGood(a []int, sum int) (int, int) {
+	for startIndex := 0; startIndex < len(a); startIndex++ {
+		currentSum := 0
+		for endIndex := startIndex; endIndex < len(a); endIndex++ {
+			currentSum += a[endIndex]
+			if currentSum == sum {
+				return startIndex, endIndex
+			}
+		}
+	}
+
+	return -1, -1
+}
