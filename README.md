@@ -29,7 +29,7 @@ Just for fun!
 - [ ] 23. Largest Number formed from an Array
 
 ## B. String:
-- [ ] 1. Reverse words in a given string
+- [x] 1. Reverse words in a given string
 - [ ] 2. Permutations of a given string
 - [ ] 3. Longest Palindrome in a String
 - [ ] 4. Recursively remove all adjacent duplicates
