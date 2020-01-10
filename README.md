@@ -9,7 +9,7 @@ Just for fun!
 - [ ] 3. Kadane’s Algorithm
 - [x] 4. Missing number in array
 - [ ] 5. Merge two sorted arrays
-- [ ] 6. Rearrange array alternatively
+- [x] 6. Rearrange array alternatively
 - [ ] 7. Number of pairs
 - [ ] 8. Inversion of Array
 - [ ] 9. Sort an array of 0s, 1s and 2s
