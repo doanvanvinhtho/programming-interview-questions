@@ -65,7 +65,7 @@ Just for fun!
 
 ## D. Stack and Queue
 - [ ] 1. Parenthesis Checker
-- [ ] 2. Next larger element
+- [x] 2. Next larger element
 - [ ] 3. Queue using two Stacks
 - [ ] 4. Stack using two queues
 - [ ] 5. Get minimum element from stack
