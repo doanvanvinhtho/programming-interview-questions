@@ -17,6 +17,11 @@ func TestRearrangeArrayAlternatively(t *testing.T) {
 	if equal(result, []int{1}) == false {
 		t.Errorf("Wrong 3: %v", result)
 	}
+
+	result = rearrangeArrayAlternatively([]int{})
+	if equal(result, []int{}) == false {
+		t.Errorf("Wrong 4: %v", result)
+	}
 }
 
 func equal(a, b []int) bool {
