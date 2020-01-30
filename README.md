@@ -5,7 +5,7 @@ Just for fun!
 
 ## A. Arrays:
 - [x] 1. Subarray with given sum
-- [ ] 2. Count the triplets
+- [x] 2. Count the triplets
 - [ ] 3. Kadane’s Algorithm
 - [x] 4. Missing number in array
 - [ ] 5. Merge two sorted arrays
