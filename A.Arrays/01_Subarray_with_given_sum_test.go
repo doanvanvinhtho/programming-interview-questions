@@ -52,8 +52,8 @@ func TestSubarrayWithGivenSum(t *testing.T) {
 
 // goos: darwin
 // goarch: amd64
-// BenchmarkSubarrayWithGivenSum-4          	24386794	        42.4 ns/op	       0 B/op	       0 allocs/op
-// BenchmarkSubarrayWithGivenSumNotGood-4   	12325627	       103 ns/op	       0 B/op	       0 allocs/op
+// BenchmarkSubarrayWithGivenSum-4          	24386794	      42.4 ns/op	       0 B/op	       0 allocs/op
+// BenchmarkSubarrayWithGivenSumNotGood-4   	12325627	     103.0 ns/op	       0 B/op	       0 allocs/op
 
 func BenchmarkSubarrayWithGivenSum(b *testing.B) {
 	for i := 0; i < b.N; i++ {

@@ -15,6 +15,8 @@
 
 package aarrays
 
+import util "github.com/doanvanvinhtho/programming-interview-questions/Z.Util"
+
 func countTheTripletsBad(a []int) int {
 	count := 0
 	len := len(a)
@@ -34,8 +36,42 @@ func countTheTripletsBad(a []int) int {
 	return count
 }
 
-// func countTheTripletsGood(a []int) int {
-// 	count := 0
-// 	len := len(a)
-// 	return count
-// }
+func countTheTripletsGood(a []int) int {
+	max, e := util.ArrayMax(a)
+	if e != nil {
+		return 0
+	}
+
+	count := 0
+	len := len(a)
+
+	frequency := make(map[int]int)
+	frequency[0] = 0
+	frequency[max+1] = 0
+	for i := 0; i < len; i++ {
+		frequency[a[i]]++
+	}
+
+	// Case 1: 0, 0, 0
+	count += (frequency[0] * (frequency[0] - 1) * (frequency[0] - 2)) / 6
+
+	// Case 2: 0, x, x
+	for i := 1; i <= max; i++ {
+		count += (frequency[0] * frequency[i] * (frequency[i] - 1)) / 2
+	}
+
+	// Case 3: x, x, 2*x
+	for i := 1; 2*i <= max; i++ {
+		count += (frequency[i] * (frequency[i] - 1)) / 2 * frequency[2*i]
+	}
+
+	// Case 4: x, y, x + y
+	// Iterate through all pairs (x, y)
+	for i := 1; i <= max; i++ {
+		for j := i + 1; i+j <= max; j++ {
+			count += frequency[i] * frequency[j] * frequency[i+j]
+		}
+	}
+
+	return count
+}

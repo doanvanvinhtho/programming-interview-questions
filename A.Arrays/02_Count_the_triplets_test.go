@@ -2,13 +2,13 @@ package aarrays
 
 import "testing"
 
-type testcase struct {
+type testcaseCountTheTriplets struct {
 	in  []int
 	out int
 }
 
 func doTestCountTheTriplets(t *testing.T, f func([]int) int) {
-	cases := []testcase{
+	cases := []testcaseCountTheTriplets{
 		{
 			in:  []int{1, 2, 3, 4, 5},
 			out: 4,
@@ -44,5 +44,30 @@ func doTestCountTheTriplets(t *testing.T, f func([]int) int) {
 
 func TestCountTheTriplets(t *testing.T) {
 	doTestCountTheTriplets(t, countTheTripletsBad)
-	// doTestCountTheTriplets(t, countTheTripletsGood)
+	doTestCountTheTriplets(t, countTheTripletsGood)
+}
+
+// goos: darwin
+// goarch: amd64
+// BenchmarkCountTheTripletsBad-4    	     460	   2603353 ns/op	       0 B/op	       0 allocs/op
+// BenchmarkCountTheTripletsGood-4   	    1522	    794790 ns/op	   11121 B/op	      23 allocs/op
+
+func BenchmarkCountTheTripletsBad(b *testing.B) {
+	a := make([]int, 200)
+	for i := 0; i < len(a); i++ {
+		a[i] = i
+	}
+	for i := 0; i < b.N; i++ {
+		countTheTripletsBad(a)
+	}
+}
+
+func BenchmarkCountTheTripletsGood(b *testing.B) {
+	a := make([]int, 200)
+	for i := 0; i < len(a); i++ {
+		a[i] = i
+	}
+	for i := 0; i < b.N; i++ {
+		countTheTripletsGood(a)
+	}
 }
