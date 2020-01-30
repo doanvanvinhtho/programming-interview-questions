@@ -2,46 +2,67 @@ package aarrays
 
 import "testing"
 
-func doTest(t *testing.T, subarray func(a []int, sum int) (int, int)) {
-	startIndex, endIndex := subarray([]int{1, 4, 20, 3, 10, 5}, 33)
-	if startIndex != 2 || endIndex != 4 {
-		t.Errorf("Wrong, startIndex=%v, endIndex=%v", startIndex, endIndex)
+type testcaseSubarrayWithGivenSum struct {
+	inArray  []int
+	inSum    int
+	outStart int
+	outEnd   int
+}
+
+func doTestSubarrayWithGivenSum(t *testing.T, subarray func(a []int, sum int) (int, int)) {
+	cases := []testcaseSubarrayWithGivenSum{
+		{
+			inArray:  []int{1, 4, 20, 3, 10, 5},
+			inSum:    33,
+			outStart: 2,
+			outEnd:   4,
+		},
+		{
+			inArray:  []int{1, 4, 0, 0, 3, 10, 5},
+			inSum:    7,
+			outStart: 1,
+			outEnd:   4,
+		},
+		{
+			inArray:  []int{1, 4, 0, 0, 3, 10, 5},
+			inSum:    15,
+			outStart: 5,
+			outEnd:   6,
+		},
+		{
+			inArray:  []int{1, 4},
+			inSum:    0,
+			outStart: -1,
+			outEnd:   -1,
+		},
 	}
 
-	startIndex, endIndex = subarray([]int{1, 4, 0, 0, 3, 10, 5}, 7)
-	if startIndex != 1 || endIndex != 4 {
-		t.Errorf("Wrong, startIndex=%v, endIndex=%v", startIndex, endIndex)
-	}
-
-	startIndex, endIndex = subarray([]int{1, 4, 0, 0, 3, 10, 5}, 15)
-	if startIndex != 5 || endIndex != 6 {
-		t.Errorf("Wrong, startIndex=%v, endIndex=%v", startIndex, endIndex)
-	}
-
-	startIndex, endIndex = subarray([]int{1, 4}, 0)
-	if startIndex != -1 || endIndex != -1 {
-		t.Errorf("Wrong, startIndex=%v, endIndex=%v", startIndex, endIndex)
+	for i, v := range cases {
+		startIndex, endIndex := subarray(v.inArray, v.inSum)
+		if startIndex != v.outStart || endIndex != v.outEnd {
+			t.Errorf("Wrong %v, startIndex=%v, endIndex=%v", i, startIndex, endIndex)
+		}
 	}
 }
 
 func TestSubarrayWithGivenSum(t *testing.T) {
-	doTest(t, subarrayWithGivenSum)
-	doTest(t, subarrayWithGivenSumNotGood)
+	doTestSubarrayWithGivenSum(t, subarrayWithGivenSum)
+	doTestSubarrayWithGivenSum(t, subarrayWithGivenSumNotGood)
 }
 
 // goos: darwin
 // goarch: amd64
-// BenchmarkSubarrayWithGivenSum-4          	24372546	        47.5 ns/op	       0 B/op	       0 allocs/op
-// BenchmarkSubarrayWithGivenSumNotGood-4   	10039954	       122 ns/op	       0 B/op	       0 allocs/op
+// BenchmarkSubarrayWithGivenSum-4          	24386794	        42.4 ns/op	       0 B/op	       0 allocs/op
+// BenchmarkSubarrayWithGivenSumNotGood-4   	12325627	       103 ns/op	       0 B/op	       0 allocs/op
 
 func BenchmarkSubarrayWithGivenSum(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		subarrayWithGivenSum([]int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 20, 3, 10, 5}, 33)
+		subarrayWithGivenSum([]int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 20, 3, 10, 5}, 33)
 	}
 }
 
 func BenchmarkSubarrayWithGivenSumNotGood(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		subarrayWithGivenSumNotGood([]int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 20, 3, 10, 5}, 33)
+		subarrayWithGivenSumNotGood([]int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 20, 3, 10, 5}, 33)
 	}
 }
