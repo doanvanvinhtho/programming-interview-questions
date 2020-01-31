@@ -1,3 +1,11 @@
+// Find subarray with given sum (Nonnegative Numbers)
+
+// Given an unsorted array of nonnegative integers, find a continuous
+// subarray which adds to a given number.
+// Examples:
+// Input: arr[] = {1, 4, 20, 3, 10, 5}, sum = 33
+// Output: Sum found between indexes 2 and 4
+
 package aarrays
 
 import "testing"

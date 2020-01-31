@@ -4,12 +4,12 @@
 // where i, j, k are indices and (1 <= i < j < k <= N), such that in the set { A_i, A_j, A_k}
 // at least one of the numbers can be written as the sum of the other two.
 
-// Examples 1:
+// Example 1:
 // - Input: A[] = {1, 2, 3, 4, 5}
 // - Output: 4
 // - The valid triplets are: (1, 2, 3), (1, 3, 4), (1, 4, 5), (2, 3, 5)
 
-// Examples 2:
+// Example 2:
 // - Input : A[] = {1, 1, 1, 2, 2}
 // - Output : 6
 

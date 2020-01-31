@@ -4,7 +4,7 @@
 // i.e first element should be maximum value, second minimum value,
 // third second max, fourth second min and so on.
 
-// Examples:
+// Example:
 // - Input : arr[] = {1, 2, 3, 4, 5, 6, 7}
 // - Output: arr[] = {7, 1, 6, 2, 5, 3, 4}
 
