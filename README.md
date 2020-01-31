@@ -6,7 +6,7 @@ Just for fun!
 ## A. Arrays:
 - [x] 1. Subarray with given sum
 - [x] 2. Count the triplets
-- [ ] 3. Kadane’s Algorithm
+- [x] 3. Kadane’s Algorithm
 - [x] 4. Missing number in array
 - [ ] 5. Merge two sorted arrays
 - [x] 6. Rearrange array alternatively
