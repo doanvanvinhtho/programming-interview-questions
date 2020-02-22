@@ -1,0 +1,22 @@
+{
+    // Controls how lines should wrap. Can be:
+    //  - 'off' (disable wrapping),
+    //  - 'on' (viewport wrapping),
+    //  - 'wordWrapColumn' (wrap at `editor.wordWrapColumn`) or
+    //  - 'bounded' (wrap at minimum of viewport and `editor.wordWrapColumn`).
+    "editor.wordWrap": "on",
+
+    // Render vertical rulers after a certain number of monospace characters. Use
+    // multiple values for multiple rulers. No rulers are drawn if array is empty
+    "editor.rulers": [114],
+
+    // Configure glob patterns for excluding files and folders. For example, the
+    // files explorer decides which files and folders to show or hide based on
+    // this setting.
+    "files.exclude": {
+    },
+
+    // Exclude search file
+    "search.exclude": {
+    },
+}
