@@ -8,7 +8,7 @@ Just for fun!
 - [x] 2. Count the triplets
 - [x] 3. Kadane’s Algorithm
 - [x] 4. Missing number in array
-- [ ] 5. Merge two sorted arrays
+- [x] 5. Merge two sorted arrays
 - [x] 6. Rearrange array alternatively
 - [ ] 7. Number of pairs
 - [ ] 8. Inversion of Array
