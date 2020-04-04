@@ -10,7 +10,7 @@ Just for fun!
 - [x] 4. Missing number in array
 - [x] 5. Merge two sorted arrays
 - [x] 6. Rearrange array alternatively
-- [ ] 7. Number of pairs
+- [x] 7. Number of pairs
 - [ ] 8. Inversion of Array
 - [ ] 9. Sort an array of 0s, 1s and 2s
 - [ ] 10. Equilibrium point
