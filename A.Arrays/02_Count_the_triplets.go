@@ -37,7 +37,7 @@ func countTheTripletsBad(a []int) int {
 }
 
 func countTheTripletsGood(a []int) int {
-	max, e := util.ArrayMax(a)
+	max, e := util.ArrayIntMax(a)
 	if e != nil {
 		return 0
 	}

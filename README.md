@@ -30,7 +30,7 @@ Just for fun!
 
 ## B. String:
 - [x] 1. Reverse words in a given string
-- [ ] 2. Permutations of a given string
+- [x] 2. Permutations of a given string
 - [ ] 3. Longest Palindrome in a String
 - [ ] 4. Recursively remove all adjacent duplicates
 - [ ] 5. Check if string is rotated by two places

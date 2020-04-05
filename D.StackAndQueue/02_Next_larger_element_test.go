@@ -33,23 +33,23 @@ import (
 func doTest(t *testing.T, f func([]int) []int) {
 	// For any array, rightmost element always has next greater element as -1.
 	result := f([]int{1})
-	if util.ArrayEqual(result, []int{-1}) == false {
+	if util.ArrayIntEqual(result, []int{-1}) == false {
 		t.Errorf("Wrong 1: %v", result)
 	}
 
 	//For an array which is sorted in decreasing order, all elements have next greater element as -1.
 	result = f([]int{3, 2, 1})
-	if util.ArrayEqual(result, []int{-1, -1, -1}) == false {
+	if util.ArrayIntEqual(result, []int{-1, -1, -1}) == false {
 		t.Errorf("Wrong 2: %v", result)
 	}
 
 	result = f([]int{4, 5, 2, 25})
-	if util.ArrayEqual(result, []int{5, 25, 25, -1}) == false {
+	if util.ArrayIntEqual(result, []int{5, 25, 25, -1}) == false {
 		t.Errorf("Wrong 3: %v", result)
 	}
 
 	result = f([]int{13, 7, 6, 12})
-	if util.ArrayEqual(result, []int{-1, 12, 12, -1}) == false {
+	if util.ArrayIntEqual(result, []int{-1, 12, 12, -1}) == false {
 		t.Errorf("Wrong 4: %v", result)
 	}
 }

@@ -54,7 +54,7 @@ func TestMergeTwoSortedArrays(t *testing.T) {
 
 	for i, c := range cases {
 		r := mergeTwoSortedArrays(c.inA, c.inB)
-		if util.ArrayEqual(r, c.out) == false {
+		if util.ArrayIntEqual(r, c.out) == false {
 			t.Errorf("Wrong %v got %v", i, r)
 		}
 	}

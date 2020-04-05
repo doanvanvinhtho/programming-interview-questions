@@ -2,8 +2,8 @@ package util
 
 import "errors"
 
-// ArrayEqual helps to compare 2 array/slice
-func ArrayEqual(a, b []int) bool {
+// ArrayIntEqual helps to compare 2 array/slice
+func ArrayIntEqual(a, b []int) bool {
 	if len(a) != len(b) {
 		return false
 	}
@@ -15,8 +15,21 @@ func ArrayEqual(a, b []int) bool {
 	return true
 }
 
-// ArrayMax helps to find maximum number of an array/slice
-func ArrayMax(a []int) (int, error) {
+// ArrayStringEqual helps to compare 2 array/slice
+func ArrayStringEqual(a, b []string) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for i, v := range a {
+		if v != b[i] {
+			return false
+		}
+	}
+	return true
+}
+
+// ArrayIntMax helps to find maximum number of an array/slice
+func ArrayIntMax(a []int) (int, error) {
 	len := len(a)
 
 	if len <= 0 {
